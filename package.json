@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "yarn build",
-    "deploy": "aws s3 sync ./build s3://www.juniorcorazza.com --delete",
+    "deploy": "aws s3 sync ./dist s3://www.juniorcorazza.com --delete",
     "postdeploy": "aws cloudfront create-invalidation --distribution-id E2VJLD288O7RUZ --paths '/*'"
   },
   "dependencies": {
