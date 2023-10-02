@@ -52,7 +52,7 @@ const ArrowDownButton = styled(IconButton)({
 });
 
 const Home: React.FC = () => {
-
+  const isMobile = useIsMobile();
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById("about");
