@@ -8,7 +8,6 @@ import logoImage from "../constants/images/logo.png";
 import { colors } from "../constants/colors";
 import { useIsMobile } from "../hooks/isMobile";
 import { Link } from "react-scroll";
-import { useScrollSpy } from "../hooks/useScrollSpy";
 
 const HeaderContent = styled(Toolbar)({
   display: "flex",
@@ -23,30 +22,24 @@ const LogoLink = styled("a")({
 });
 
 const LogoImage = styled("img")({
-  maxWidth: "100px",
+  maxWidth: "auto",
   maxHeight: "60px",
-  width: "auto",
-  height: "auto",
 });
 
 const HeaderLinks = styled("div")({
   display: "flex",
-  gap: "48px",
-  flex: 1,
-  justifyContent: "flex-end",
-  marginRight: "48px",
 });
 
-const HeaderLink = styled(Link)(
-  ({ isActive }: { isActive: boolean }) => ({
-    color:  colors.white,
-    textDecoration: "none",
-    fontSize: "20px",
-    fontFamily: "Lato, sans-serif",
-    fontWeight: 200,
-    backgroundColor: isActive ? "#000" : "transparent"
-  }),
-);
+const HeaderLink = styled(Link)({
+  display: "flex",
+  color: colors.white,
+  fontSize: "20px",
+  fontFamily: "Lato, sans-serif",
+  fontWeight: 200,
+  height: "60px",
+  alignItems: "center",
+  padding: "0 24px",
+});
 
 const HamburgerMenu = styled("div")({
   alignItems: "center",
@@ -56,9 +49,8 @@ const HamburgerMenu = styled("div")({
 
 const MobileMenu = styled("div")(
   (
-    { isMenuOpen, backgroundColor }: {
+    { isMenuOpen }: {
       isMenuOpen: boolean;
-      backgroundColor: string;
     },
   ) => ({
     position: "fixed",
@@ -67,37 +59,30 @@ const MobileMenu = styled("div")(
     width: "100%",
     height: isMenuOpen ? "auto" : 0,
     borderTop: isMenuOpen ? "0.1px solid white" : "none",
-    paddingBottom: "8px",
     overflow: "hidden",
-    backgroundColor,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     zIndex: 1000,
-    transition: "height 0.6s",
   }),
 );
 
-const MobileMenuLink = styled(Link)(
-  ({ isActive }: { isActive: boolean }) => ({
-    color:  colors.white,
-    textDecoration: "none",
-    fontSize: "20px",
-    fontFamily: "Lato, sans-serif",
-    fontWeight: 200,
-    margin: "10px",
-
-    backgroundColor: isActive ? "#000" : colors.white
-  }),
-);
+const MobileMenuLink = styled(Link)({
+  padding: "12px",
+  textAlign: "center",
+  backgroundColor: colors.backgroundGrey,
+  color: colors.white,
+  width: "100%",
+  textDecoration: "none",
+  fontSize: "20px",
+  fontFamily: "Lato, sans-serif",
+  fontWeight: 200,
+});
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const targetIds = ["home", "about", "experience", "work", "contact"];
-  const currentSection = useScrollSpy(targetIds, isMobile ? 0 : -60);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -151,33 +136,54 @@ const Header: React.FC = () => {
               </HamburgerMenu>
               <MobileMenu
                 isMenuOpen={isMenuOpen}
-                backgroundColor={colors.backgroundGrey}
               >
                 <MobileMenuLink
                   to="about"
+                  duration={500}
+                  offset={-50}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
                   onClick={closeMenu}
-                  isActive={currentSection === "about"}
+                  activeStyle={{
+                    backgroundColor: colors.headerActive,
+                  }}
                 >
                   ABOUT
                 </MobileMenuLink>
                 <MobileMenuLink
                   to="experience"
+                  duration={500}
+                  offset={-50}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
                   onClick={closeMenu}
-                  isActive={currentSection === "experience"}
+                  activeStyle={{ backgroundColor: colors.headerActive }}
                 >
                   EXPERIENCE
                 </MobileMenuLink>
                 <MobileMenuLink
                   to="work"
+                  duration={500}
+                  offset={-50}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
                   onClick={closeMenu}
-                  isActive={currentSection === "work"}
+                  activeStyle={{ backgroundColor: colors.headerActive }}
                 >
                   WORK
                 </MobileMenuLink>
                 <MobileMenuLink
                   to="contact"
+                  duration={500}
+                  offset={-50}
+                  spy={true}
+                  smooth={true}
+                  hashSpy={true}
                   onClick={closeMenu}
-                  isActive={currentSection === "contact"}
+                  activeStyle={{ backgroundColor: colors.headerActive }}
                 >
                   CONTACT
                 </MobileMenuLink>
@@ -187,34 +193,48 @@ const Header: React.FC = () => {
           : (
             <HeaderLinks>
               <HeaderLink
-              smooth={true} 
-              duration={500}
                 to="about"
-                isActive={currentSection === "about"}
+                duration={500}
+                offset={-50}
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                activeStyle={{
+                  backgroundColor: colors.headerActive,
+                }}
               >
                 ABOUT
               </HeaderLink>
               <HeaderLink
-              smooth={true} 
-              duration={500}
                 to="experience"
-                isActive={currentSection === "experience"}
+                duration={500}
+                offset={-50}
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                activeStyle={{ backgroundColor: colors.headerActive }}
               >
                 EXPERIENCE
               </HeaderLink>
               <HeaderLink
-              smooth={true} 
-              duration={500}
                 to="work"
-                isActive={currentSection === "work"}
+                duration={500}
+                offset={-50}
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                activeStyle={{ backgroundColor: colors.headerActive }}
               >
                 WORK
               </HeaderLink>
               <HeaderLink
-              smooth={true} 
-              duration={500}
                 to="contact"
-                isActive={currentSection === "contact"}
+                duration={500}
+                offset={-50}
+                spy={true}
+                smooth={true}
+                hashSpy={true}
+                activeStyle={{ backgroundColor: colors.headerActive }}
               >
                 CONTACT
               </HeaderLink>

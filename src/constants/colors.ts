@@ -6,7 +6,8 @@ const baseColors = {
   green: "#464D45",
   silver: "#C0C0C0",
   darkCharcoal: "#333333",
-  gray55: "#8C8C8C"
+  gray55: "#8C8C8C",
+  madonna: "#3E4150"
 };
 
 export const colors = {
@@ -17,6 +18,7 @@ export const colors = {
   background: baseColors.white,
   backgroundLight: baseColors.silver,
   backgroundGrey: baseColors.grey,
+  headerActive: baseColors.madonna,
   button: baseColors.gray55,
   socialButtons: baseColors.darkCharcoal,
   facebook: "#3b5998",

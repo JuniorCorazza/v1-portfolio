@@ -7,7 +7,6 @@ import About from "./sections/About/about";
 import Header from "./navigation/header";
 import Work from "./sections/Work/work";
 import Footer from "./sections/Footer/footer";
-import WhatIDo from "./sections/WhatIDo/whatIDo";
 
 const App: React.FC = () => {
   return (
@@ -19,7 +18,6 @@ const App: React.FC = () => {
       <section id="about">
         <About />
       </section>
-      <WhatIDo />
       <section id="experience">
         <Experience />
       </section>

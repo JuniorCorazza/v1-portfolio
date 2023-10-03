@@ -11,6 +11,7 @@ const HomeSection = styled("section")({
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundAttachment: "fixed",
+  backgroundPosition: "center top",
   minHeight: "75vh",
   display: "flex",
   alignItems: "center",
@@ -77,7 +78,10 @@ const Home: React.FC = () => {
       </Container>
       <ButtonContainer>
         <ArrowDownButton disableRipple onClick={scrollToAbout}>
-          <SvgIcon sx={{ fontSize: "48px" }} component={KeyboardArrowDown} />
+          <SvgIcon
+            sx={{ fontSize: isMobile ? "32px" : "48px" }}
+            component={KeyboardArrowDown}
+          />
         </ArrowDownButton>
       </ButtonContainer>
     </HomeSection>

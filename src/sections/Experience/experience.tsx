@@ -20,16 +20,16 @@ const CenteredContainer = styled("div")({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  margin: "0px 64px",
 });
 
 const LogoGrid = styled("div")(({ isMobile }: { isMobile: boolean }) => ({
   display: "grid",
   gap: "16px",
-  justifyContent: "center",
+  justifyItems: "center",
   alignItems: "center",
-  gridTemplateColumns: isMobile ? "repeat(auto-fill, minmax(calc(50% - 8px), 1fr))" : "repeat(auto-fill, minmax(90px, 1fr))", 
-  padding: "0 8px",
+  gridTemplateColumns: isMobile
+    ? "repeat(auto-fill, minmax(calc(50% - 8px), 1fr))"
+    : "repeat(auto-fill, minmax(90px, 1fr))",
 }));
 
 const Logo = styled("img")(({ isMobile }: { isMobile: boolean }) => ({
@@ -68,7 +68,7 @@ const Experience: React.FC = () => {
     <Section id="experience" color="silver">
       <Text
         fontFamily="Abhaya Libre"
-        fontSize={45}
+        fontSize={isMobile ? 24 : 60}
         style={{ margin: "32px 0" }}
       >
         SOME TECHNIQUES I HAVE WORKED WITH
@@ -81,7 +81,12 @@ const Experience: React.FC = () => {
               title={<TooltipContent>{logo.tooltip}</TooltipContent>}
               arrow
             >
-              <Logo key={index} src={logo.src} alt={`Logo ${index + 1}`} isMobile={isMobile} />
+              <Logo
+                key={index}
+                src={logo.src}
+                alt={`Logo ${index + 1}`}
+                isMobile={isMobile}
+              />
             </Tooltip>
           ))}
         </LogoGrid>

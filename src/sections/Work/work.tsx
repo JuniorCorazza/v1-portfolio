@@ -15,7 +15,7 @@ const WorkWrapper = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: "600px",
+  minHeight: "55vh",
   flexDirection: "row",
   overflow: "hidden",
 });
@@ -74,10 +74,10 @@ const WorkDescriptionContainer = styled("div")({
 const WorkItem = styled("div")(({ isSelected }: { isSelected: boolean }) => ({
   filter: !isSelected ? "blur(5px)" : "blur(0)",
   "& img": {
-    width: "80%",
+    width: "70%",
     height: "auto",
     marginBottom: "8px",
-  }
+  },
 }));
 
 const workItems = [
@@ -150,83 +150,86 @@ const Work = () => {
   };
 
   return (
-    <Section color="white">
+    <Section style={{ padding: isMobile ? "16px 24px" : "32px 64px"}} color="white">
       <WorkWrapper>
-        {isMobile ? (
-          // Render simplified mobile view
-          <div>
-            <WorkItem
-              className={`selected ${scrolling ? "scrolling" : ""}`}
-                                isSelected={true}
-              style={{
-                transform: "translateX(0)",
-              }}
-            >
-              <img src={workItems[selectedImage].image} alt={workItems[selectedImage].title} />
-              <Text fontFamily="Abhaya Libre" fontSize={60}>
-                {workItems[selectedImage].title}
-              </Text>
-            </WorkItem>
-            <WorkDescriptionContainer
-              className={`selected ${scrolling ? "hidden" : ""}`}
-            >
-              <Text fontSize={22}>{selectedDescription}</Text>
-            </WorkDescriptionContainer>
-            <div>
+        {isMobile
+          ? (
+            <div style={{ flexDirection: "row", display: "flex" }}>
               <IconButton onClick={scrollLeft}>
                 <SvgIcon component={ArrowBackIos} fill={colors.textDark} />
               </IconButton>
+              <div style={{ flexDirection: "column", display: "flex" }}>
+                <WorkItem
+                  className={`selected ${scrolling ? "scrolling" : ""}`}
+                  isSelected={true}
+                  style={{
+                    transform: "translateX(0)",
+                  }}
+                >
+                  <img
+                    src={workItems[selectedImage].image}
+                    alt={workItems[selectedImage].title}
+                  />
+                  <Text fontFamily="Abhaya Libre" fontSize={24}>
+                    {workItems[selectedImage].title}
+                  </Text>
+                </WorkItem>
+                <WorkDescriptionContainer
+                  className={`selected ${scrolling ? "hidden" : ""}`}
+                >
+                  <Text fontSize={14}>{selectedDescription}</Text>
+                </WorkDescriptionContainer>
+              </div>
               <IconButton onClick={scrollRight}>
                 <SvgIcon component={ArrowForwardIos} fill={colors.textDark} />
               </IconButton>
             </div>
-          </div>
-        ) : (
-          
-          <>
-            <IconButton onClick={scrollLeft}>
-              <SvgIcon component={ArrowBackIos} fill={colors.textDark} />
-            </IconButton>
-            <FullWorkContainer>
-              <WorkContainer>
-                {getDisplayedItems().map((work, index) => (
-                  <WorkItem
-                    key={index}
-                    isSelected={index === 1}
-                    className={index === 1
-                      ? "selected"
-                      : scrolling
-                      ? "scrolling"
-                      : ""}
-                    // onClick={() =>
-                    //   handleImageSelect(index, workItems[index].description)
-                    // }
-                    style={{
-                      transform: index === 0
-                        ? `translateX(-33.33%)`
-                        : index === 2
-                        ? `translateX(33.33%)`
-                        : `translateX(0)`,
-                    }}
-                  >
-                    <img src={work.image} alt={work.title} />
-                    <Text fontFamily="Abhaya Libre" fontSize={60}>
-                      {work.title}
-                    </Text>
-                  </WorkItem>
-                ))}
-              </WorkContainer>
-              <WorkDescriptionContainer
-                className={`selected ${scrolling ? "hidden" : ""}`}
-              >
-                <Text fontSize={22}>{selectedDescription}</Text>
-              </WorkDescriptionContainer>
-            </FullWorkContainer>
-            <IconButton onClick={scrollRight}>
-              <SvgIcon component={ArrowForwardIos} fill={colors.textDark} />
-            </IconButton>
-          </>
-        )}
+          )
+          : (
+            <>
+              <IconButton onClick={scrollLeft}>
+                <SvgIcon component={ArrowBackIos} fill={colors.textDark} />
+              </IconButton>
+              <FullWorkContainer>
+                <WorkContainer>
+                  {getDisplayedItems().map((work, index) => (
+                    <WorkItem
+                      key={index}
+                      isSelected={index === 1}
+                      className={index === 1
+                        ? "selected"
+                        : scrolling
+                        ? "scrolling"
+                        : ""}
+                      // onClick={() =>
+                      //   handleImageSelect(index, workItems[index].description)
+                      // }
+                      style={{
+                        transform: index === 0
+                          ? `translateX(-33.33%)`
+                          : index === 2
+                          ? `translateX(33.33%)`
+                          : `translateX(0)`,
+                      }}
+                    >
+                      <img src={work.image} alt={work.title} />
+                      <Text fontFamily="Abhaya Libre" fontSize={60}>
+                        {work.title}
+                      </Text>
+                    </WorkItem>
+                  ))}
+                </WorkContainer>
+                <WorkDescriptionContainer
+                  className={`selected ${scrolling ? "hidden" : ""}`}
+                >
+                  <Text fontSize={22}>{selectedDescription}</Text>
+                </WorkDescriptionContainer>
+              </FullWorkContainer>
+              <IconButton onClick={scrollRight}>
+                <SvgIcon component={ArrowForwardIos} fill={colors.textDark} />
+              </IconButton>
+            </>
+          )}
       </WorkWrapper>
     </Section>
   );

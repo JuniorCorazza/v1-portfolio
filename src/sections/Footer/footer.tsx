@@ -9,7 +9,6 @@ import {
   faInstagram,
   faLinkedin,
   faSpotify,
-  faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { StyledComponentProps, SvgIcon } from "@mui/material";
@@ -71,13 +70,6 @@ const Footer: React.FC = () => {
           <FontAwesomeIcon icon={faFacebook} color="white" size="lg" />
         </SocialMediaBox>
         <SocialMediaBox
-          transformedColor={colors.twitter}
-          href="https://twitter.com"
-          target="_blank"
-        >
-          <FontAwesomeIcon icon={faTwitter} color="white" size="lg" />
-        </SocialMediaBox>
-        <SocialMediaBox
           transformedColor={colors.linkedin}
           href="https://www.linkedin.com/in/junior-corazza"
           target="_blank"
@@ -86,28 +78,28 @@ const Footer: React.FC = () => {
         </SocialMediaBox>
         <SocialMediaBox
           transformedColor={colors.github}
-          href="https://twitter.com"
+          href="https://github.com/JuniorCorazza"
           target="_blank"
         >
           <FontAwesomeIcon icon={faGithub} color="white" size="lg" />
         </SocialMediaBox>
         <SocialMediaBox
           transformedColor={colors.instagram}
-          href="https://twitter.com"
+          href="https://www.instagram.com/jcorazzaa/"
           target="_blank"
         >
           <FontAwesomeIcon icon={faInstagram} color="white" size="lg" />
         </SocialMediaBox>
         <SocialMediaBox
           transformedColor={colors.whatsapp}
-          href="https://www.instagram.com/jcorazzaa/"
+          href="https://wa.me/46707383386"
           target="_blank"
         >
           <FontAwesomeIcon icon={faWhatsapp} color="white" size="lg" />
         </SocialMediaBox>
         <SocialMediaBox
           transformedColor={colors.spotify}
-          href="https://twitter.com"
+          href="https://open.spotify.com/user/juncor"
           target="_blank"
         >
           <FontAwesomeIcon icon={faSpotify} color="white" size="lg" />
@@ -115,14 +107,17 @@ const Footer: React.FC = () => {
       </LinkContent>
 
       <Link
-        smooth={true}
+        smooth="easeInBack"
         duration={1500}
         delay={500}
         to={""}
         onClick={scrollToTop}
         color={colors.textLight}
       >
-        <SvgIcon sx={{ fontSize: "48px", fill:colors.textLight }} component={RocketLaunch} />
+        <SvgIcon
+          sx={{ fontSize: "48px", fill: colors.textLight }}
+          component={RocketLaunch}
+        />
       </Link>
       <Text marginBottom={"4px"} color={colors.textLight} fontSize={"10px"}>
         Bring me to the top!
