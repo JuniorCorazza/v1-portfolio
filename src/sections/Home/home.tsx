@@ -1,18 +1,18 @@
 import React from "react";
 import { Container, IconButton, styled, SvgIcon } from "@mui/material";
-import HomeImage from "../../constants/images/welcome.png";
-import Text from "../../components/text";
-import { colors } from "../../constants/colors";
+import HomeImage from "@/constants/images/welcome.png";
+import Text from "@/components/text";
+import { colors } from "@/constants/colors";
 import { KeyboardArrowDown } from "@mui/icons-material";
-import { useIsMobile } from "../../hooks/isMobile";
+import { useIsMobile } from "@/hooks/isMobile";
+import { Link } from "react-scroll";
 
 const HomeSection = styled("section")({
   backgroundImage: `url('${HomeImage}')`,
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
-  backgroundAttachment: "fixed",
   backgroundPosition: "center top",
-  minHeight: "75vh",
+  height: "80vh",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -56,6 +56,7 @@ const Home: React.FC = () => {
   const isMobile = useIsMobile();
 
   const scrollToAbout = () => {
+    Link;
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
       aboutSection.scrollIntoView({
@@ -77,12 +78,19 @@ const Home: React.FC = () => {
         </RowsContainer>
       </Container>
       <ButtonContainer>
-        <ArrowDownButton disableRipple onClick={scrollToAbout}>
-          <SvgIcon
-            sx={{ fontSize: isMobile ? "32px" : "48px" }}
-            component={KeyboardArrowDown}
-          />
-        </ArrowDownButton>
+        <Link
+          to="about"
+          offset={-50}
+          smooth={true}
+          duration={500}
+        >
+          <ArrowDownButton disableRipple onClick={scrollToAbout}>
+            <SvgIcon
+              sx={{ fontSize: isMobile ? "32px" : "48px" }}
+              component={KeyboardArrowDown}
+            />
+          </ArrowDownButton>
+        </Link>
       </ButtonContainer>
     </HomeSection>
   );

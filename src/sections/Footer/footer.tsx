@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
-import { colors } from "../../constants/colors";
-import Text from "../../components/text";
+import { colors } from "@/constants/colors";
+import Text from "@/components/text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -13,11 +13,25 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { StyledComponentProps, SvgIcon } from "@mui/material";
 import { RocketLaunch } from "@mui/icons-material";
-import Scroll, { Link } from "react-scroll";
-
+import { animateScroll as scroll } from "react-scroll";
+import { TFunction } from "i18next";
 interface SocialMediaBoxProps extends StyledComponentProps {
   transformedColor: string;
 }
+
+const RocketContainer = styled("div")({
+  cursor: "pointer",
+  justifyContent: "center",
+  alignItems: "center",
+  display: "flex",
+  flexDirection: "column",
+  "&:hover .rotate-icon": {
+    transform: "rotate(-45deg)",
+  },
+  "& .rotate-icon": {
+    transition: "transform 0.7s ease-in-out",
+  },
+});
 
 const FooterContainer = styled("footer")({
   backgroundColor: colors.backgroundGrey,
@@ -54,9 +68,13 @@ const SocialMediaBox = styled("a")<SocialMediaBoxProps>((
   },
 }));
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  t: TFunction;
+};
+
+const Footer: React.FC<FooterProps> = ({ t }) => {
   const scrollToTop = () => {
-    Scroll.animateScroll.scrollToTop();
+    scroll.scrollToTop();
   };
 
   return (
@@ -105,32 +123,30 @@ const Footer: React.FC = () => {
           <FontAwesomeIcon icon={faSpotify} color="white" size="lg" />
         </SocialMediaBox>
       </LinkContent>
-
-      <Link
-        smooth="easeInBack"
-        duration={1500}
-        delay={500}
-        to={""}
-        onClick={scrollToTop}
-        color={colors.textLight}
-      >
+      <RocketContainer onClick={scrollToTop}>
         <SvgIcon
-          sx={{ fontSize: "48px", fill: colors.textLight }}
+          className="rotate-icon"
+          sx={{
+            paddingBottom: "8px",
+            fontSize: "48px",
+            fill: colors.textLight,
+            cursor: "pointer",
+          }}
           component={RocketLaunch}
         />
-      </Link>
-      <Text marginBottom={"4px"} color={colors.textLight} fontSize={"10px"}>
-        Bring me to the top!
-      </Text>
+        <Text marginBottom={"4px"} color={colors.textLight} fontSize={"10px"}>
+          {t("footer.toTheTop")}
+        </Text>
+      </RocketContainer>
 
       <Text color={colors.textLight} fontWeight={700} fontSize={"15px"}>
         Copyright 2023
       </Text>
       <Text color={colors.textLight} fontSize={"10px"}>
-        Designed by Emma Corazza
+        {t("footer.designedBy")}
       </Text>
       <Text color={colors.textLight} fontSize={"10px"}>
-        Made by Junior Corazza
+        {t("footer.madeBy")}
       </Text>
     </FooterContainer>
   );

@@ -1,58 +1,86 @@
-import React from "react";
-import Text from "../../components/text";
-import Section from "../../components/Section";
-import Button from "../../components/button";
-import { useIsMobile } from "../../hooks/isMobile";
-// import ContactForm from "./contactForm";
+import React, { useEffect, useState } from "react";
+import Text from "@/components/text";
+import Section from "@/components/Section";
+import Button from "@/components/button";
+import { useIsMobile } from "@/hooks/isMobile";
+import ContactForm from "./contactForm";
+import { styled } from "@mui/material";
+import { colors } from "@/constants/colors";
+import { TFunction } from "i18next";
 
-const Contact: React.FC = () => {
+const ContactContainer = styled("div")((
+  { isMobile }: { isMobile: boolean },
+) => ({
+  textAlign: "center",
+  borderRadius: "40px",
+  padding: isMobile ? "24px 12px 24px 12px" : "64px 64px 64px 64px",
+  margin: isMobile ? "0 0 64px 0" : "0 64px 182px 64px",
+  background:
+    `linear-gradient(to bottom, ${colors.headerActive}, ${colors.blue})`,
+  boxShadow: "4px 6px 12px rgba(0, 0, 0, 0.8)",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+}));
+
+type ContactProps = {
+  t: TFunction;
+};
+
+const Contact: React.FC<ContactProps> = ({ t }) => {
   const isMobile = useIsMobile();
-  // const [sentSuccessful, setSentSuccessful] = useState<boolean>(false);
-  // const [contactFormOpen, setContactFormOpen] = useState<boolean>(false);
-  // const [confirmationTextVisible, setConfirmationTextVisible] = useState<boolean>(false);
+  const [sent, setSent] = useState<boolean>(false);
+  const [contactFormOpen, setContactFormOpen] = useState<boolean>(false);
+  const [confirmationText, setConfirmationText] = useState<
+    string
+  >();
 
-  // const onSentSuccessful = () => {
+  const onSend = (status: number) => {
+    setSent(true);
+    if (status === 200) {
+      setContactFormOpen(false);
+      setConfirmationText("sentSuccessfully");
+    } else {
+      setConfirmationText(
+        "sentFailed",
+      );
+    }
+  };
 
-  //     setContactFormOpen(false);
-  //     setConfirmationTextVisible(true)
+  const timeoutMessage = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 7000));
+    setContactFormOpen(false);
+    setConfirmationText(undefined);
+  };
 
-  // }
-
-  // useEffect(() => {
-  // }, [sentSuccessful])
+  useEffect(() => {
+    if (sent) {
+      timeoutMessage();
+    }
+  }, [sent]);
 
   return (
     <Section
-      style={{ padding: isMobile ? "92px 64px" : "180px 262px" }}
+      style={{ padding: isMobile ? "24px 24px" : "96px 64px 0 64px" }}
       id="contact"
-      color="silver"
     >
-      <Text
-        fontFamily="Abhaya Libre"
-        fontSize={isMobile ? 30 : 60}
-      >
-        CONTACT
-      </Text>
-      <Text
-        fontSize={isMobile ? 18 : 24}
-      >
-        Stay connected for more exciting developments and projects. Feel free to
-        reach out if you have any questions or collaboration ideas. Looking
-        forward to connecting with you!
-      </Text>
-      <Button
-        buttonText="SAY HELLO!"
-        // onClick={() => setContactFormOpen(!contactFormOpen)}
-        onClick={() => console.log("clicked")}
-        isMobile={isMobile}
-        fatText
-      />
-      {
-        /* {confirmationTextVisible && (<Text>afaf</Text>)}
-      {contactFormOpen && (
-        <ContactForm onSend={onSentSuccessful}/>
-      )} */
-      }
+      <ContactContainer isMobile={isMobile}>
+        <Text
+          fontFamily="Abhaya Libre"
+          fontSize={isMobile ? 30 : 80}
+          color={colors.textLight}
+        >
+          {t("contact.title")}
+        </Text>
+        <Button
+          buttonText={t("contact.button")}
+          onClick={() => setContactFormOpen(!contactFormOpen)}
+          isMobile={isMobile}
+          fatText
+        />
+        {confirmationText && <Text>{t(`contact.${confirmationText}`)}</Text>}
+        {contactFormOpen && <ContactForm onSend={onSend} t={t} />}
+      </ContactContainer>
     </Section>
   );
 };

@@ -2,3 +2,12 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.slick-list {
+    height: 300px;
+}
+
+.slick-slide img {
+    margin: auto;
+    height: auto;
+}

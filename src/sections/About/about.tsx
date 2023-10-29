@@ -1,25 +1,19 @@
 import React from "react";
 import { styled } from "@mui/system";
-import { colors } from "../../constants/colors";
-import Resume from "../../constants/CV.pdf";
-import Text from "../../components/text";
-import Button from "../../components/button";
-import Grid from "@mui/material/Grid";
-import Section from "../../components/Section";
-import { useIsMobile } from "../../hooks/isMobile";
-import Me from "../../constants/images/me.png";
-import WhatIDo from "../WhatIDo/whatIDo";
 
-const ContentContainer = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  flex: "0 0 75%",
-  flexDirection: "column",
-  position: "relative",
-});
+import Resume from "@/constants/CV.pdf";
+import Text from "@/components/text";
+import Button from "@/components/button";
+import Grid from "@mui/material/Grid";
+import Section from "@/components/Section";
+import { useIsMobile } from "@/hooks/isMobile";
+import Me from "@/constants/images/me1.png";
+import WhatIDo from "../WhatIDo/whatIDo";
+import { TFunction } from "i18next";
 
 const LeftContent = styled("div")(({ isMobile }: { isMobile: boolean }) => ({
   marginBottom: "24px",
+  marginRight: isMobile ? "0" : "64px",
   textAlign: isMobile ? "center" : "left",
 }));
 
@@ -28,28 +22,21 @@ const RightContent = styled("div")(({ isMobile }: { isMobile: boolean }) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  marginTop: isMobile ? "24px" : "0",
+  marginTop: isMobile ? "32px" : "98px",
 }));
 
-const RightImageContainer = styled("div")({
-  backgroundColor: colors.backgroundLight,
-  width: "300px",
-  height: "300px",
-  borderRadius: "50%",
-  overflow: "hidden",
-  position: "relative",
-  marginBottom: "16px",
-  alignItems: "center",
-  justifyContent: "center",
-  display: "flex",
-});
-
 const RightImage = styled("img")({
-  width: "85%",
-  height: "85%",
+  width: "100%",
+  height: "100%",
+  borderRadius: "20px",
+  boxShadow: "6px 6px 12px rgba(0, 0, 0, 0.6)",
 });
 
-const About: React.FC = () => {
+type AboutProps = {
+  t: TFunction;
+};
+
+const About: React.FC<AboutProps> = ({ t }) => {
   const isMobile = useIsMobile();
 
   const openResume = () => {
@@ -59,121 +46,117 @@ const About: React.FC = () => {
   return (
     <>
       <Section
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: isMobile ? "column" : "row",
-          margin: "0 auto",
-        }}
         id="about"
+        initialInView
+        style={{
+          padding: isMobile ? "16px 32px 32px 32px" : "64px 64px 0 64px",
+        }}
       >
-        <ContentContainer>
-          <LeftContent isMobile={isMobile}>
-            <Text fontFamily="Abhaya Libre" fontSize={isMobile ? 40 : 100}>
-              Who Am I?
-            </Text>
-            <Text
-              fontWeight={300}
-              sx={{ marginBottom: "16px" }}
-              fontSize={isMobile ? 16 : 22}
-            >
-              I'm Junior, data engineer and full-stack developer. While I might
-              spend my days diving into lines of code, I promise I'm not a robot
-              (at least, not yet)!
-            </Text>
-            <Text
-              fontWeight={300}
-              sx={{ marginBottom: "16px" }}
-              fontSize={isMobile ? 16 : 22}
-            >
-              You're probably wondering what a developer like me does in my
-              spare time, right? Well, when I'm not busy debugging, you'll find
-              me on the golf course, chasing that elusive hole-in-one. You see,
-              golf and coding have something in common – they both require
-              precision, patience, and an uncanny ability to find the one
-              missing piece that's hiding in plain sight.
-            </Text>
-            <Text
-              fontWeight={300}
-              sx={{ marginBottom: "16px" }}
-              fontSize={isMobile ? 16 : 22}
-            >
-              Whether I'm hacking away at my keyboard or hacking my way through
-              the rough on the fairway, I approach every challenge with
-              enthusiasm and a good dose of humor. After all, they say laughter
-              is the best debugging tool, right?
-            </Text>
-            <Text
-              fontWeight={300}
-              sx={{ marginBottom: "16px" }}
-              fontSize={isMobile ? 16 : 22}
-            >
-              So, if you're looking for a developer who can code circles around
-              challenges and maybe even give you a few golf tips along the way,
-              you've come to the right place.
-            </Text>
-            <Grid
-              container
-              direction="row"
-              textAlign={isMobile ? "center" : "left"}
-              justifyContent={isMobile ? "center" : "left"}
-            >
-              <Grid item sx={{ marginRight: isMobile ? "0" : "32px" }}>
-                <Grid container direction="column">
-                  <Grid item>
-                    <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
-                      39238
-                    </Text>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+          }}
+        >
+          <div>
+            <LeftContent isMobile={isMobile}>
+              <Text fontFamily="Abhaya Libre" fontSize={isMobile ? 40 : 100}>
+                {t("about.title")}
+              </Text>
+              <Text
+                fontWeight={300}
+                sx={{ marginBottom: "16px" }}
+                fontSize={isMobile ? 16 : 22}
+              >
+                {t("about.paragraph1")}
+              </Text>
+              <Text
+                fontWeight={300}
+                sx={{ marginBottom: "16px" }}
+                fontSize={isMobile ? 16 : 22}
+              >
+                {t("about.paragraph2")}
+              </Text>
+              <Text
+                fontWeight={300}
+                sx={{ marginBottom: "16px" }}
+                fontSize={isMobile ? 16 : 22}
+              >
+                {t("about.paragraph3")}
+              </Text>
+              <Text
+                fontWeight={300}
+                sx={{ marginBottom: "16px" }}
+                fontSize={isMobile ? 16 : 22}
+              >
+                {t("about.paragraph4")}
+              </Text>
+              <Grid
+                container
+                direction="row"
+                textAlign={isMobile ? "center" : "left"}
+                justifyContent={isMobile ? "center" : "left"}
+              >
+                <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
+                  <Grid container direction="column">
+                    <Grid item>
+                      <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
+                        6923
+                      </Text>
+                    </Grid>
+                    <Grid item>
+                      <Text fontSize={isMobile ? 14 : 22}>
+                        {t("about.coffee")}
+                      </Text>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <Text fontSize={isMobile ? 14 : 22}>
-                      Cups of coffee consumed
-                    </Text>
+                </Grid>
+                <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
+                  <Grid container direction="column">
+                    <Grid item>
+                      <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
+                        88928
+                      </Text>
+                    </Grid>
+                    <Grid item>
+                      <Text fontSize={isMobile ? 14 : 22}>
+                        {t("about.debugged")}
+                      </Text>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
+                  <Grid container direction="column">
+                    <Grid item>
+                      <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
+                        91238
+                      </Text>
+                    </Grid>
+                    <Grid item>
+                      <Text fontSize={isMobile ? 14 : 22}>
+                        {t("about.bugs")}
+                      </Text>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item sx={{ marginRight: isMobile ? "0" : "32px" }}>
-                <Grid container direction="column">
-                  <Grid item>
-                    <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
-                      889283
-                    </Text>
-                  </Grid>
-                  <Grid item>
-                    <Text fontSize={isMobile ? 14 : 22}>
-                      Debugged lines of code
-                    </Text>
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item sx={{ marginRight: isMobile ? "0" : "32px" }}>
-                <Grid container direction="column">
-                  <Grid item>
-                    <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
-                      889283
-                    </Text>
-                  </Grid>
-                  <Grid item>
-                    <Text fontSize={isMobile ? 14 : 22}>Cups of coffee</Text>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </LeftContent>
-        </ContentContainer>
-        <RightContent isMobile={isMobile}>
-          <RightImageContainer>
-            <RightImage src={Me} alt="Example Image" />
-          </RightImageContainer>
-          <Button
-            buttonText="DOWNLOAD RESUME"
-            onClick={openResume}
-            isMobile={isMobile}
-          />
-        </RightContent>
+            </LeftContent>
+          </div>
+          <RightContent isMobile={isMobile}>
+            <div style={{ marginBottom: "28px" }}>
+              <RightImage src={Me} alt="Example Image" />
+            </div>
+            <Button
+              buttonText={t("about.button")}
+              onClick={openResume}
+              isMobile={isMobile}
+              largeButton
+              darkBackground
+            />
+          </RightContent>
+        </div>
       </Section>
-      <WhatIDo />
+      <WhatIDo t={t} />
     </>
   );
 };

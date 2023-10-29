@@ -9,7 +9,7 @@ const defaultProps: TypographyProps = {
 };
 
 interface TextProps extends TypographyProps {
-  fontFamily?: "Abhaya Libre" | "Lato, sans serif";
+  fontFamily?: "Abhaya Libre" | "Lato, sans serif" | "Montserrat";
 }
 
 const Text: React.FC<TextProps> = (props) => {

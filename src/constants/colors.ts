@@ -7,7 +7,8 @@ const baseColors = {
   silver: "#C0C0C0",
   darkCharcoal: "#333333",
   gray55: "#8C8C8C",
-  madonna: "#3E4150"
+  madonna: "#3E4150",
+  blue: "#556F9A"
 };
 
 export const colors = {
@@ -27,5 +28,6 @@ export const colors = {
   instagram: "#C13584",
   whatsapp: "#25D366",
   linkedin: "#0077b5",
-  spotify: "#1DB954"
+  spotify: "#1DB954",
+  blue: baseColors.blue
 };

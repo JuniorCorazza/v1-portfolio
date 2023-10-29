@@ -7,27 +7,26 @@ import MenuIcon from "@mui/icons-material/Menu";
 import logoImage from "../constants/images/logo.png";
 import { colors } from "../constants/colors";
 import { useIsMobile } from "../hooks/isMobile";
-import { Link } from "react-scroll";
+import { animateScroll as scroll, Link } from "react-scroll";
+import LanguageSelector from "../components/languageSelection";
+import { TFunction } from "i18next";
 
 const HeaderContent = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
-  alignItems: "center",
   transition: "opacity 0.6s",
-});
-
-const LogoLink = styled("a")({
-  display: "flex",
-  alignItems: "center",
 });
 
 const LogoImage = styled("img")({
   maxWidth: "auto",
   maxHeight: "60px",
+  cursor: "pointer",
 });
 
 const HeaderLinks = styled("div")({
   display: "flex",
+  alignItems: "center",
+  cursor: "pointer",
 });
 
 const HeaderLink = styled(Link)({
@@ -64,6 +63,7 @@ const MobileMenu = styled("div")(
     flexDirection: "column",
     alignItems: "center",
     zIndex: 1000,
+    cursor: "pointer",
   }),
 );
 
@@ -79,7 +79,11 @@ const MobileMenuLink = styled(Link)({
   fontWeight: 200,
 });
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  t: TFunction;
+};
+
+const Header: React.FC<HeaderProps> = ({ t }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,6 +104,10 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const handleLogoClick = () => {
+    scroll.scrollToTop();
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -113,6 +121,7 @@ const Header: React.FC = () => {
       style={{
         transition: "background-color 0.6s, height 0.6s",
         justifyContent: "center",
+        alignContent: "center",
         backgroundColor: isMobile
           ? colors.backgroundGrey
           : isScrolled
@@ -123,9 +132,11 @@ const Header: React.FC = () => {
       }}
     >
       <HeaderContent>
-        <LogoLink href="/">
-          <LogoImage src={logoImage} alt="Logo" />
-        </LogoLink>
+        <LogoImage
+          src={logoImage}
+          alt="Logo"
+          onClick={handleLogoClick}
+        />
         {isMobile
           ? (
             <>
@@ -149,7 +160,7 @@ const Header: React.FC = () => {
                     backgroundColor: colors.headerActive,
                   }}
                 >
-                  ABOUT
+                  {t("header.about")}
                 </MobileMenuLink>
                 <MobileMenuLink
                   to="experience"
@@ -161,7 +172,7 @@ const Header: React.FC = () => {
                   onClick={closeMenu}
                   activeStyle={{ backgroundColor: colors.headerActive }}
                 >
-                  EXPERIENCE
+                  {t("header.experience")}
                 </MobileMenuLink>
                 <MobileMenuLink
                   to="work"
@@ -173,7 +184,7 @@ const Header: React.FC = () => {
                   onClick={closeMenu}
                   activeStyle={{ backgroundColor: colors.headerActive }}
                 >
-                  WORK
+                  {t("header.work")}
                 </MobileMenuLink>
                 <MobileMenuLink
                   to="contact"
@@ -185,8 +196,20 @@ const Header: React.FC = () => {
                   onClick={closeMenu}
                   activeStyle={{ backgroundColor: colors.headerActive }}
                 >
-                  CONTACT
+                  {t("header.contact")}
                 </MobileMenuLink>
+                <div
+                  style={{
+                    backgroundColor: colors.backgroundGrey,
+                    width: "100%",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    paddingBottom: "8px",
+                  }}
+                >
+                  <LanguageSelector onLanguageClicked={closeMenu} />
+                </div>
               </MobileMenu>
             </>
           )
@@ -203,7 +226,7 @@ const Header: React.FC = () => {
                   backgroundColor: colors.headerActive,
                 }}
               >
-                ABOUT
+                {t("header.about")}
               </HeaderLink>
               <HeaderLink
                 to="experience"
@@ -214,7 +237,7 @@ const Header: React.FC = () => {
                 hashSpy={true}
                 activeStyle={{ backgroundColor: colors.headerActive }}
               >
-                EXPERIENCE
+                {t("header.experience")}
               </HeaderLink>
               <HeaderLink
                 to="work"
@@ -225,7 +248,7 @@ const Header: React.FC = () => {
                 hashSpy={true}
                 activeStyle={{ backgroundColor: colors.headerActive }}
               >
-                WORK
+                {t("header.work")}
               </HeaderLink>
               <HeaderLink
                 to="contact"
@@ -236,8 +259,9 @@ const Header: React.FC = () => {
                 hashSpy={true}
                 activeStyle={{ backgroundColor: colors.headerActive }}
               >
-                CONTACT
+                {t("header.contact")}
               </HeaderLink>
+              <LanguageSelector />
             </HeaderLinks>
           )}
       </HeaderContent>

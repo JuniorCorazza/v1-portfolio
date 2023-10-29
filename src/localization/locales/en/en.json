@@ -1,0 +1,85 @@
+{
+  "header": {
+    "about": "ABOUT",
+    "experience": "EXPERIENCE",
+    "work": "WORK",
+    "contact": "CONTACT"
+  },
+  "about": {
+    "title": "Who am I?",
+    "paragraph1": "I'm Junior, data engineer and full-stack developer. While I might spend my days diving into lines of code, I promise I'm not a robot (at least, not yet)!",
+    "paragraph2": "You're probably wondering what a developer like me does in my spare time, right? Well, when I'm not busy debugging, you'll find me on the golf course, chasing that elusive hole-in-one. You see, golf and coding have something in common – they both require precision, patience, and an uncanny ability to find the one missing piece that's hiding in plain sight.",
+    "paragraph3": "Whether I'm hacking away at my keyboard or hacking my way through the rough on the golf course, I approach every challenge with enthusiasm and a good dose of humor. After all, they say laughter is the best debugging tool, right?",
+    "paragraph4": "So, if you're looking for a developer who can code circles around challenges and maybe even give you a few golf tips along the way, you've come to the right place.",
+    "coffee": "Cups of coffee consumed",
+    "debugged": "Debugged lines of code",
+    "bugs": "Bugs squashed",
+    "button": "DOWNLOAD RESUME"
+  },
+  "experience": {
+    "title": "SOME TECHNIQUES I HAVE WORKED WITH",
+    "languages": "Languages",
+    "frontEnd": "Front end",
+    "backEnd": "Back end",
+    "devOps": "DevOps",
+    "tools": "Tools",
+    "testing": "Testing"
+  },
+  "contact": {
+    "title": "Interested in working together?",
+    "button": "SAY HELLO!",
+    "sentSuccessfully": "Sent!",
+    "sentFailed": "Could not send the message, please reach out on other places such as WhatsApp!",
+    "contactForm": {
+      "name": "Your name",
+      "email": "Your email",
+      "number": "Your phone number",
+      "message": "Message",
+      "button": "Send"
+    }
+  },
+  "whatIDo": {
+    "container1": {
+      "title": "Fullstack Development",
+      "message": "As a skilled fullstack developer, my primary focus is creating responsive and user-friendly web applications with an emphasis on UI/UX design and API integration. I excel in seamlessly integrating front-end and back-end components to create robust systems. I ensure not only an exceptional user experience but also lightning-fast performance, optimizing the efficiency of web applications.",
+      "tag1": "Web Applications",
+      "tag2": "Lightning-Fast Performance",
+      "tag3": "UI/UX Design",
+      "tag4": "API Integration"
+    },
+    "container2": {
+      "title": "Cloud and Infrastructure",
+      "message": "Within the realm of cloud and infrastructure, my daily responsibilities encompass architecting and managing scalable systems using tools such as Terraform and cloud platforms. This involves creating a robust foundation to support modern applications, ensuring they function efficiently and reliably. My specialization lies in optimizing these systems, enhancing their performance to meet the demands of today's technology-driven world.",
+      "tag1": "Cloud Infrastructure",
+      "tag2": "Scalability",
+      "tag3": "Application Optimization",
+      "tag4": "Infrastructure Management"
+    }
+  },
+  "work": {
+    "project0": {
+      "title": "Quandify App",
+      "message": "At Quandify, I played a pivotal role in handling, relaying, processing, and presenting data, managing cloud infrastructure, and integrating seamlessly with our partners via APIs. This involved ensuring smooth data flow, enabling effective utilization, and maintaining secure, efficient cloud operations. Among the many projects I contributed to, one standout is the development of an innovative app. This nifty app, available on both the App Store and Google Play, fetched consumption data through APIs, granting users easy access to their usage details and be notified about potential leaks. Additionally, it streamlined the process of installing new devices, all within a user-friendly interface. This project not only demonstrates the technical expertise required in data handling and API integration but also exemplifies the practical application of this expertise in creating user-centric solutions for everyday challenges."
+    },
+    "project1": {
+      "title": "Cone Storm: Cubic Escape",
+      "message": "A thrilling and heart-pounding game created with JavaScript and the powerful graphics library, Three.js. Developed as a lab day project for the sheer fun and excitement of gaming, Cone Storm takes you on a pulse-pounding journey through a dynamic, neon-lit world. In Cone Storm: Cubic Escape, you'll find yourself in control of a lone cube, embarked on an endless and perilous journey. Your objective is simple: survive. But the path to survival is anything but easy. As you navigate through a surreal, constantly evolving 3D environment, you must skillfully dodge a relentless onslaught of other cones hurtling towards you. These cones are your relentless foes, and they're coming at you from all directions. Your reflexes and spatial awareness will be put to the ultimate test as you strive to avoid collisions and keep your cube intact. Can you set the high-score?",
+      "button": "Play"
+    },
+    "project2": {
+      "title": "Project 3",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur erat a efficitur.",
+      "button": "Play"
+    },
+    "project3": {
+      "title": "Project 4",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur erat a efficitur.",
+      "button": "Play"
+    }
+  },
+  "footer": {
+    "toTheTop": "Bring me to the top!",
+    "designedBy": "Design by Emma Corazza",
+    "madeBy": "Made by Junior Corazza"
+  }
+}

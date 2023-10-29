@@ -1,0 +1,86 @@
+{
+  "header": {
+    "about": "OM MIG",
+    "experience": "ERFARENHET",
+    "work": "TIDIGARE ARBETEN",
+    "contact": "KONTAKT"
+  },
+  "about": {
+    "title": "Vem är jag?",
+    "paragraph1": "Mitt namn är Junior, dataingenjör och fullstackutvecklare. Även om jag kan tillbringa mina dagar med att dyka ner i rader med kod, lovar jag att jag inte är en robot (åtminstone inte än)!",
+    "paragraph2": "Du undrar säkert vad en utvecklare som jag gör på min fritid, eller hur? Tja, när jag inte är upptagen med att felsöka kod, hittar du mig på golfbanan och jagar den där svårfångade hole-in-one. Du förstår, golf och kodning har något gemensamt – de kräver båda precision, tålamod och en förmåga att hitta den saknade biten som gömmer sig mitt framför ögat.",
+    "paragraph3": "Oavsett om jag knackar på mitt tangentbord eller hackar mig igenom ruffen på golfbanan, tar jag mig an varje utmaning med entusiasm och en god portion humor. När allt kommer omkring säger de att skratt är det bästa felsökningsverktyget, eller hur?",
+    "paragraph4": "Så om du letar efter en utvecklare som kan koda cirklar kring utmaningar och kanske till och med ge dig några golftips på vägen, har du kommit till rätt ställe.",
+    "coffee": "Koppar kaffe konsumerade",
+    "debugged": "Felsökta kodrader",
+    "bugs": "Buggar mosade",
+    "button": "LADDA NER CV"
+  },
+  "experience": {
+    "title": "NÅGRA TEKNIKER JAG HAR ARBETAD MED",
+    "languages": "Språk",
+    "frontEnd": "Front end",
+    "backEnd": "Back end",
+    "devOps": "DevOps",
+    "tools": "Verktyg",
+    "testing": "Testning"
+  },
+  "contact": {
+    "title": "Intresserad av att arbeta tillsammans?",
+    "button": "SÄG HEJ!",
+    "sentSuccessfully": "Skickat!",
+    "sentFailed": "Det gick inte att skicka meddelandet, vänligen kontakta mig på andra platser såsom WhatsApp!",
+    "contactForm": {
+      "name": "Ditt namn",
+      "email": "Din email",
+      "number": "Ditt telefonnummer",
+      "message": "Meddelande",
+      "button": "Skicka"
+    }
+  },
+  "whatIDo": {
+    "container1": {
+      "title": "Fullstack Development",
+      "message": "Som en skicklig fullstack-utvecklare är mitt främsta fokus att skapa responsiva och användarvänliga webbapplikationer med tonvikt på UI/UX-design och API-integration. Jag utmärker mig i att sömlöst integrera front-end- och back-end-komponenter för att skapa robusta system. Jag säkerställer inte bara en enastående användarupplevelse, utan också en blixtsnabb prestanda som optimerar effektiviteten hos webbapplikationer.",
+      "tag1": "Webbapplikationer",
+      "tag2": "UI/UX-design",
+      "tag3": "API-integration",
+      "tag4": "Blixtsnabb prestanda"
+    },
+    "container2": {
+      "title": "Cloud and Infrastructure",
+      "message": "Inom området moln och infrastruktur innebär mina dagliga ansvarsområden att arkitektera och hantera skalbara system med hjälp av verktyg som Terraform och molnplattformar. Detta involverar skapandet av en robust grund för att stödja moderna applikationer och säkerställa att de fungerar effektivt och pålitligt. Min specialisering ligger i att optimera dessa system och förbättra deras prestanda för att möta dagens krav i en teknikdriven värld.",
+      "tag1": "Molninfrastruktur",
+      "tag2": "Skalbarhet",
+      "tag3": "Applikationsoptimering",
+      "tag4": "Infrastrukturhantering"
+    }
+  },
+  "work": {
+    "project0": {
+      "title": "Quandify App",
+      "message": "På Quandify spelade jag en avgörande roll i att hantera, vidarebefordra, bearbeta och presentera data, hantera molninfrastruktur och sömlöst integrera med våra partners via API:er. Detta innebar att säkerställa ett smidigt dataflöde, möjliggöra effektivt utnyttjande och upprätthålla säker, effektiv molnverksamhet. Bland de många projekt jag bidragit till vill jag lyfta en innovativ app. Denna fiffiga app, tillgänglig på både App Store och Google Play, hämtade data via API:er, vilket ger användarna enkel tillgång till deras förbrukningsdata och bli varnade om potentiella läckor. Dessutom effektiviserade det processen att installera nya enheter, allt inom ett användarvänligt gränssnitt. Detta projekt visar inte bara den tekniska expertis som krävs inom datahantering och API-integration utan exemplifierar också den praktiska tillämpningen av denna expertis för att skapa användarcentrerade lösningar för vardagliga utmaningar.",
+      "button": "Spela"
+    },
+    "project1": {
+      "title": "Cone Storm: Cubic Escape",
+      "message": "Ett spännande och adrenalinfyllt spel skapat med JavaScript och den kraftfulla grafikbiblioteket Three.js. Utvecklat som ett kul projekt på en lab-day för ren glädje och spänning av spel, tar Cone Storm med dig på en hjärtklappande resa genom en dynamisk värld upplyst av neonljus. I Cone Storm: Cubic Escape finner du dig själv i kontroll över en ensam kub, som ger sig ut på en ändlös och farlig resa. Ditt mål är enkelt: överleva. Men vägen till överlevnad är allt annat än enkel. När du navigerar genom en surrealistisk, ständigt föränderlig 3D-miljö måste du skickligt undvika en obeveklig onslaught av koner som rusar mot dig. Dessa koner är dina outtröttliga fiender, och de kommer mot dig från alla riktningar. Dina reflexer och rumsmedvetenhet kommer att sättas på det ultimata provet när du strävar efter att undvika kollisioner och hålla din kub intakt. Kan du sätta högsta poängen?",
+      "button": "Spela"
+    },
+    "project2": {
+      "title": "Projekt 3",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "button": "Spela"
+    },
+    "project3": {
+      "title": "Projekt 4",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "button": "Spela"
+    }
+  },
+  "footer": {
+    "toTheTop": "Ta mig till toppen!",
+    "designedBy": "Design av Emma Corazza",
+    "madeBy": "Gjord av Junior Corazza"
+  }
+}
