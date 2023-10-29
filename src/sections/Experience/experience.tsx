@@ -32,6 +32,7 @@ import firebaseLogo from "@/constants/images/firebase.png";
 import dockerLogo from "@/constants/images/docker.png";
 import mysqlLogo from "@/constants/images/mysql.png";
 import pythonLogo from "@/constants/images/python.png";
+import slackLogo from "@/constants/images/slack.png";
 import { Zoom } from "@mui/material";
 
 const backEndLogos = [
@@ -71,6 +72,7 @@ const toolsLogos = [
   { src: postmanLogo, tooltip: "Postman" },
   { src: vscodeLogo, tooltip: "Visual Studio Code" },
   { src: figmaLogo, tooltip: "Figma" },
+  { src: slackLogo, tooltip: "Slack" },
 ];
 
 const testingLogos = [

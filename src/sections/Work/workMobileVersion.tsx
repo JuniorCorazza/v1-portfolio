@@ -73,6 +73,7 @@ const WorkMobileVersion: React.FC<WorkProps> = ({ t, workItems }) => {
 
   return (
     <Section
+      id="work"
       style={{ padding: "16px 12px" }}
       color="white"
     >

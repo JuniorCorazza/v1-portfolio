@@ -56,7 +56,6 @@ const Home: React.FC = () => {
   const isMobile = useIsMobile();
 
   const scrollToAbout = () => {
-    Link;
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
       aboutSection.scrollIntoView({

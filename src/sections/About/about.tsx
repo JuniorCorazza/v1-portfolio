@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
 
-import Resume from "@/constants/CV.pdf";
+import Resume from "@/constants/Resumé.pdf";
 import Text from "@/components/text";
 import Button from "@/components/button";
 import Grid from "@mui/material/Grid";
@@ -58,90 +58,89 @@ const About: React.FC<AboutProps> = ({ t }) => {
             flexDirection: isMobile ? "column" : "row",
           }}
         >
-          <div>
-            <LeftContent isMobile={isMobile}>
-              <Text fontFamily="Abhaya Libre" fontSize={isMobile ? 40 : 100}>
-                {t("about.title")}
-              </Text>
-              <Text
-                fontWeight={300}
-                sx={{ marginBottom: "16px" }}
-                fontSize={isMobile ? 16 : 22}
-              >
-                {t("about.paragraph1")}
-              </Text>
-              <Text
-                fontWeight={300}
-                sx={{ marginBottom: "16px" }}
-                fontSize={isMobile ? 16 : 22}
-              >
-                {t("about.paragraph2")}
-              </Text>
-              <Text
-                fontWeight={300}
-                sx={{ marginBottom: "16px" }}
-                fontSize={isMobile ? 16 : 22}
-              >
-                {t("about.paragraph3")}
-              </Text>
-              <Text
-                fontWeight={300}
-                sx={{ marginBottom: "16px" }}
-                fontSize={isMobile ? 16 : 22}
-              >
-                {t("about.paragraph4")}
-              </Text>
-              <Grid
-                container
-                direction="row"
-                textAlign={isMobile ? "center" : "left"}
-                justifyContent={isMobile ? "center" : "left"}
-              >
-                <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
-                  <Grid container direction="column">
-                    <Grid item>
-                      <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
-                        6923
-                      </Text>
-                    </Grid>
-                    <Grid item>
-                      <Text fontSize={isMobile ? 14 : 22}>
-                        {t("about.coffee")}
-                      </Text>
-                    </Grid>
+          <LeftContent isMobile={isMobile}>
+            <Text fontFamily="Abhaya Libre" fontSize={isMobile ? 40 : 100}>
+              {t("about.title")}
+            </Text>
+            <Text
+              fontWeight={300}
+              sx={{ marginBottom: "16px" }}
+              fontSize={isMobile ? 16 : 22}
+            >
+              {t("about.paragraph1")}
+            </Text>
+            <Text
+              fontWeight={300}
+              sx={{ marginBottom: "16px" }}
+              fontSize={isMobile ? 16 : 22}
+            >
+              {t("about.paragraph2")}
+            </Text>
+            <Text
+              fontWeight={300}
+              sx={{ marginBottom: "16px" }}
+              fontSize={isMobile ? 16 : 22}
+            >
+              {t("about.paragraph3")}
+            </Text>
+            <Text
+              fontWeight={300}
+              sx={{ marginBottom: "16px" }}
+              fontSize={isMobile ? 16 : 22}
+            >
+              {t("about.paragraph4")}
+            </Text>
+            <Grid
+              container
+              direction="row"
+              textAlign={isMobile ? "center" : "left"}
+              justifyContent={isMobile ? "center" : "left"}
+            >
+              <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
+                <Grid container direction="column">
+                  <Grid item>
+                    <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
+                      6923
+                    </Text>
                   </Grid>
-                </Grid>
-                <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
-                  <Grid container direction="column">
-                    <Grid item>
-                      <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
-                        88928
-                      </Text>
-                    </Grid>
-                    <Grid item>
-                      <Text fontSize={isMobile ? 14 : 22}>
-                        {t("about.debugged")}
-                      </Text>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
-                  <Grid container direction="column">
-                    <Grid item>
-                      <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
-                        91238
-                      </Text>
-                    </Grid>
-                    <Grid item>
-                      <Text fontSize={isMobile ? 14 : 22}>
-                        {t("about.bugs")}
-                      </Text>
-                    </Grid>
+                  <Grid item>
+                    <Text fontSize={isMobile ? 14 : 22}>
+                      {t("about.coffee")}
+                    </Text>
                   </Grid>
                 </Grid>
               </Grid>
-            </LeftContent>
-          </div>
+              <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
+                <Grid container direction="column">
+                  <Grid item>
+                    <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
+                      88928
+                    </Text>
+                  </Grid>
+                  <Grid item>
+                    <Text fontSize={isMobile ? 14 : 22}>
+                      {t("about.debugged")}
+                    </Text>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item sx={{ marginRight: isMobile ? "16px" : "32px" }}>
+                <Grid container direction="column">
+                  <Grid item>
+                    <Text fontSize={isMobile ? 26 : 50} fontWeight={200}>
+                      91238
+                    </Text>
+                  </Grid>
+                  <Grid item>
+                    <Text fontSize={isMobile ? 14 : 22}>
+                      {t("about.bugs")}
+                    </Text>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </LeftContent>
+
           <RightContent isMobile={isMobile}>
             <div style={{ marginBottom: "28px" }}>
               <RightImage src={Me} alt="Example Image" />

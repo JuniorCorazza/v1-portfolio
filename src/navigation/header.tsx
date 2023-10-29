@@ -242,7 +242,7 @@ const Header: React.FC<HeaderProps> = ({ t }) => {
               <HeaderLink
                 to="work"
                 duration={500}
-                offset={-50}
+                offset={-100}
                 spy={true}
                 smooth={true}
                 hashSpy={true}

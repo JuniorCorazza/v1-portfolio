@@ -56,6 +56,7 @@ const WorkNormalVersion: React.FC<WorkProps> = ({ t, workItems }) => {
 
   return (
     <div
+      id="work"
       style={{
         padding: "0 64px",
         minHeight: "700px",
