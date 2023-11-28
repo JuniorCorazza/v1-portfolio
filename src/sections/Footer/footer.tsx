@@ -142,7 +142,7 @@ const Footer: React.FC<FooterProps> = ({ t }) => {
       <Text color={colors.textLight} fontWeight={700} fontSize={"15px"}>
         Copyright 2023
       </Text>
-      <a href="http://emmacorazza.se">
+      <a href="http://emmacorazza.se" style={{textDecoration: "none"}} >
         <Text color={colors.textLight} fontSize={"10px"}>
           {t("footer.designedBy")}
         </Text>
