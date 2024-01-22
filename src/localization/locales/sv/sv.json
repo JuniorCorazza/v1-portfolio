@@ -57,20 +57,20 @@
     }
   },
   "work": {
-    "project0": {
+    "project1": {
       "title": "Quandify App",
       "message": "På Quandify spelade jag en avgörande roll i att hantera, vidarebefordra, bearbeta och presentera data, hantera molninfrastruktur och sömlöst integrera med våra partners via API:er. Detta innebar att säkerställa ett smidigt dataflöde, möjliggöra effektivt utnyttjande och upprätthålla säker, effektiv molnverksamhet. Bland de många projekt jag bidragit till vill jag lyfta en innovativ app. Denna fiffiga app, tillgänglig på både App Store och Google Play, hämtade data via API:er, vilket ger användarna enkel tillgång till deras förbrukningsdata och bli varnade om potentiella läckor. Dessutom effektiviserade det processen att installera nya enheter, allt inom ett användarvänligt gränssnitt. Detta projekt visar inte bara den tekniska expertis som krävs inom datahantering och API-integration utan exemplifierar också den praktiska tillämpningen av denna expertis för att skapa användarcentrerade lösningar för vardagliga utmaningar.",
       "button": "Spela"
     },
-    "project1": {
+    "project2": {
       "title": "Cone Storm: Cubic Escape",
       "message": "Ett spännande och adrenalinfyllt spel skapat med JavaScript och den kraftfulla grafikbiblioteket Three.js. Utvecklat som ett kul projekt på en lab-day för ren glädje och spänning av spel, tar Cone Storm med dig på en hjärtklappande resa genom en dynamisk värld upplyst av neonljus. I Cone Storm: Cubic Escape finner du dig själv i kontroll över en ensam kub, som ger sig ut på en ändlös och farlig resa. Ditt mål är enkelt: överleva. Men vägen till överlevnad är allt annat än enkel. När du navigerar genom en surrealistisk, ständigt föränderlig 3D-miljö måste du skickligt undvika en obeveklig onslaught av koner som rusar mot dig. Dessa koner är dina outtröttliga fiender, och de kommer mot dig från alla riktningar. Dina reflexer och rumsmedvetenhet kommer att sättas på det ultimata provet när du strävar efter att undvika kollisioner och hålla din kub intakt. Kan du sätta högsta poängen?",
       "button": "Spela"
     },
-    "project2": {
-      "title": "Projekt 3",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "button": "Spela"
+    "project0": {
+      "title": "E-handel",
+      "message": "Som ett hobbyprojekt utvecklade jag en e-handelssajt. Tailwind CSS & React används för front-end och Next.js för backend. Webbplatsen är ett shoppingsystem där kunder kan bläddra igenom kategorier och se produkter, och slutligen handla genom Stripe. För att förbättra användarupplevelsen implementerade jag rendering på serversidan med Next.js, vilket säkerställde snabba sidladdningar och optimal prestanda. Det finns också en administratörspanel där en administratör kan lägga till och redigera produktkategorier, uppdatera produktdetaljer och anpassa webbplatsens utseende genom att ändra bilder och banners. Denna dynamiska kontroll över innehållet och bilderna på webbplatsen lägger till ett lager av flexibilitet och personalisering. Detta e-handelsprojekt tjänar som ett bevis på mina färdigheter i full-stack utveckling och mitt engagemang för att skapa användarvänliga, funktionsrika applikationer. Utforska gärna demon eller kontakta mig för mer information om utvecklingsprocessen och de tekniker som används!",
+      "button": "Gå till demo"
     },
     "project3": {
       "title": "Projekt 4",

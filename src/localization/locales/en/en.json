@@ -57,19 +57,19 @@
     }
   },
   "work": {
-    "project0": {
+    "project1": {
       "title": "Quandify App",
       "message": "At Quandify, I played a pivotal role in handling, relaying, processing, and presenting data, managing cloud infrastructure, and integrating seamlessly with our partners via APIs. This involved ensuring smooth data flow, enabling effective utilization, and maintaining secure, efficient cloud operations. Among the many projects I contributed to, one standout is the development of an innovative app. This nifty app, available on both the App Store and Google Play, fetched consumption data through APIs, granting users easy access to their usage details and be notified about potential leaks. Additionally, it streamlined the process of installing new devices, all within a user-friendly interface. This project not only demonstrates the technical expertise required in data handling and API integration but also exemplifies the practical application of this expertise in creating user-centric solutions for everyday challenges."
     },
-    "project1": {
+    "project2": {
       "title": "Cone Storm: Cubic Escape",
       "message": "A thrilling and heart-pounding game created with JavaScript and the powerful graphics library, Three.js. Developed as a lab day project for the sheer fun and excitement of gaming, Cone Storm takes you on a pulse-pounding journey through a dynamic, neon-lit world. In Cone Storm: Cubic Escape, you'll find yourself in control of a lone cube, embarked on an endless and perilous journey. Your objective is simple: survive. But the path to survival is anything but easy. As you navigate through a surreal, constantly evolving 3D environment, you must skillfully dodge a relentless onslaught of other cones hurtling towards you. These cones are your relentless foes, and they're coming at you from all directions. Your reflexes and spatial awareness will be put to the ultimate test as you strive to avoid collisions and keep your cube intact. Can you set the high-score?",
       "button": "Play"
     },
-    "project2": {
-      "title": "Project 3",
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur erat a efficitur.",
-      "button": "Play"
+    "project0": {
+      "title": "E-commerce",
+      "message": "As a hobby project, I developed a e-commerce site. Utilizing Tailwind CSS & React for the front-end, and Next.js for the backend. The website is a shopping systems where customers can browse through categories and view products, and finally shop through Stripe. To enhance the user experience, I implemented server-side rendering using Next.js, ensuring fast page loads and optimal performance. There's also an admin dashboard to allow an admin to add and edit product categories, update product details, and customize the website's appearance by modifying images and banners. This dynamic control over the content and visuals of the site adds a layer of flexibility and personalization. This e-commerce project serves as a testament to my skills in full-stack development and my commitment to creating user-friendly, feature-rich applications. Feel free to explore the demo or reach out to me for more details on the development process and the technologies used!",
+      "button": "Go to demo"
     },
     "project3": {
       "title": "Project 4",
