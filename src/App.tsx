@@ -1,28 +1,18 @@
-import React from "react";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import Layout from "@/components/Layout";
+import Home from "@/pages/Home";
+import Experience from "@/pages/Experience";
 
-import Home from "./sections/Home/home";
-import Experience from "./sections/Experience/experience";
-import Contact from "./sections/Contact/contact";
-import About from "./sections/About/about";
-import Header from "./navigation/header";
-import Work from "./sections/Work/work";
-import Footer from "./sections/Footer/footer";
-import "./localization";
-import { useTranslation } from "react-i18next";
-
-const App: React.FC = () => {
-  const { t } = useTranslation();
+export default function App() {
   return (
-    <>
-      <Header t={t} />
-      <Home />
-      <About t={t} />
-      <Experience t={t} />
-      <Work t={t} />
-      <Contact t={t} />
-      <Footer t={t} />
-    </>
+    <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="experience" element={<Experience />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
-};
-
-export default App;
+}

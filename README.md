@@ -1,27 +1,61 @@
-# React + TypeScript + Vite
+# juniorcorazza.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for Junior Corazza — a dark, terminal-themed single-page app
+with two views: a **Home** page and a git-log-style **Experience** page.
 
-Currently, two official plugins are available:
+Built with Vite, React, TypeScript and Tailwind CSS. Deployed to AWS S3 +
+CloudFront.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Development
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```bash
+yarn install
+yarn dev        # http://localhost:5173
+yarn build      # type-check + production build to dist/
+yarn preview    # serve the production build
+yarn lint
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Requires Node 24.
+
+## Project structure
+
+```
+src/
+  data/content.ts     # all copy — services, work, products, stack, timeline
+  components/         # StatusBar, Nav, Terminal, Tag, SectionLabel, Reveal, Footer, Layout
+  sections/          # Home sections: Hero, Services, SelectedWork, Products, Stack, About, Contact
+  pages/             # Home, Experience
+  App.tsx            # HashRouter + routes
+  index.css          # Tailwind entry, fonts, theme variable
+```
+
+Content is data-driven: edit `src/data/content.ts` to change copy, add work
+items, or wire up product links — no component changes needed.
+
+## Theming
+
+The whole site's accent colour is a single variable. Change `--accent-rgb` in
+[`src/index.css`](src/index.css) and every accent/green element — labels,
+buttons, links, terminal `$` prompts and status dots — updates at once:
+
+```css
+:root {
+  --accent-rgb: 111 207 127; /* terminal green (default) */
+}
+```
+
+## Routing
+
+Uses `HashRouter` (`/#/`, `/#/experience`) so deep links and refreshes work on
+static S3/CloudFront hosting without a server-side SPA fallback.
+
+## Deploy
+
+Pushes to `main` deploy automatically via GitHub Actions
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) using AWS OIDC
+— no static credentials. To deploy manually with local AWS credentials:
+
+```bash
+yarn deploy     # build + s3 sync + CloudFront invalidation
+```

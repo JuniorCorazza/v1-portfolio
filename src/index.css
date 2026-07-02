@@ -1,0 +1,105 @@
+/* Self-hosted fonts — latin subset only, and only the weights/styles used */
+@import "@fontsource/jetbrains-mono/latin-500.css";
+@import "@fontsource/jetbrains-mono/latin-600.css";
+@import "@fontsource/newsreader/latin-300.css";
+@import "@fontsource/newsreader/latin-400.css";
+@import "@fontsource/newsreader/latin-500.css";
+@import "@fontsource/newsreader/latin-300-italic.css";
+@import "@fontsource/newsreader/latin-400-italic.css";
+@import "@fontsource/space-grotesk/latin-400.css";
+@import "@fontsource/space-grotesk/latin-600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /*
+   * The single accent colour for the entire site, as space-separated RGB
+   * channels. Every green/accent element — section labels, buttons, links,
+   * the terminal `$` prompts and status dots — derives from this one value.
+   * Change it here to re-theme everything.
+   *
+   *   111 207 127  → #6fcf7f  (terminal green — default)
+   *   216 162 74   → #d8a24a  (gold)
+   *   91 157 255   → #5b9dff  (blue)
+   *   224 96 58    → #e0603a  (orange)
+   */
+  --accent-rgb: 111 207 127;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink font-sans text-cream antialiased;
+  }
+
+  /* Consistent accent-tinted selection */
+  ::selection {
+    background: rgb(var(--accent-rgb) / 0.28);
+    color: #ece9e2;
+  }
+}
+
+@layer components {
+  /* Scroll-reveal: hidden until JS adds `.reveal-shown` when it enters view.
+     Forced visible under reduced-motion and print so content never gets stuck. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-shown {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce), print {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+@layer utilities {
+  /* Faint 46px grid with an accent glow — used on the hero and experience header */
+  .bg-grid-glow {
+    background-image: radial-gradient(
+        110% 80% at 92% 0%,
+        rgb(var(--accent-rgb) / 0.06),
+        transparent 56%
+      ),
+      linear-gradient(rgba(236, 233, 226, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(236, 233, 226, 0.028) 1px, transparent 1px);
+    background-size: auto, 46px 46px, 46px 46px;
+  }
+
+  /* Radial accent wash rising from the bottom — used on contact sections */
+  .bg-accent-rise {
+    background-image: radial-gradient(
+      100% 120% at 50% 100%,
+      rgb(var(--accent-rgb) / 0.07),
+      transparent 60%
+    );
+  }
+}
+
+/* Honour reduced-motion preferences everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
