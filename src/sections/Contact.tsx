@@ -28,18 +28,10 @@ export default function Contact({ line1, line2, blurb }: ContactProps) {
       )}
       <div className="flex flex-wrap items-center justify-center gap-[14px]">
         <a
-          href={contact.bookingUrl}
-          target="_blank"
-          rel="noreferrer noopener"
-          className="rounded-full bg-accent px-8 py-4 font-sans text-[16px] font-semibold text-ink transition-opacity hover:opacity-90"
-        >
-          Book an intro call →
-        </a>
-        <a
           href={`mailto:${contact.email}`}
-          className="rounded-full border border-cream/[0.24] px-8 py-4 font-mono text-[15px] font-semibold text-cream transition-colors hover:border-cream/50"
+          className="rounded-full bg-accent px-8 py-4 font-mono text-[16px] font-semibold text-ink transition-opacity hover:opacity-90"
         >
-          {contact.email}
+          {contact.email} →
         </a>
       </div>
       <div className="mt-6 font-mono text-[13px] font-medium text-cream/45">

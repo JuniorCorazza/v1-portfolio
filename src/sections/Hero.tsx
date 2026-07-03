@@ -33,12 +33,10 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-wrap gap-3">
             <a
-              href={contact.bookingUrl}
-              target="_blank"
-              rel="noreferrer noopener"
+              href={`mailto:${contact.email}`}
               className="rounded-full bg-accent px-7 py-[15px] font-sans text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
             >
-              Book a call →
+              Get in touch →
             </a>
             <Link
               to="/experience"

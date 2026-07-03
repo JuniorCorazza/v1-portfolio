@@ -17,8 +17,6 @@ export const profile = {
 export const contact = {
   email: "juncor94@gmail.com",
   phone: "+46 70 738 33 86",
-  /** Placeholder scheduling link — swap for the real booking URL once live. */
-  bookingUrl: "https://calendly.com/juniorcorazza/intro",
   github: "https://github.com/JuniorCorazza",
   linkedin: "https://se.linkedin.com/in/junior-corazza",
   website: "https://juniorcorazza.com",
@@ -101,7 +99,7 @@ export const selectedWork: {
     meta: "PERSONAL PROJECT · ONGOING",
     title: "A fully self-serve e-commerce platform",
     external: true,
-    href: "#",
+    href: "https://ecommerce-git-main-junior-corazzas-projects.vercel.app/",
     body: "A storefront entirely customizable from an admin dashboard — create categories and products, edit the dashboard content, and track store analytics in one place.",
     tags: ["TypeScript", "Next.js", "React", "Tailwind"],
   },
@@ -158,7 +156,7 @@ export const products: {
     title: "Cash-flow forecasting model",
     body: "A 12-month cash-flow forecast for small businesses — automated dashboard, instant runway, no accounting skills needed.",
     tags: ["Excel", "Sheets"],
-    href: "#",
+    href: "https://www.etsy.com/se-en/listing/4531742000/automated-cash-flow-forecast-spreadsheet",
   },
   {
     kicker: "PRODUCTIVITY",
