@@ -6,7 +6,7 @@ export default function Stack() {
   return (
     <section className="border-t border-cream/10 bg-panel px-5 py-[70px] sm:px-10">
       <div className="mx-auto max-w-content">
-        <SectionLabel label="04 / STACK" className="mb-[38px]" />
+        <SectionLabel label="03 / STACK" className="mb-[38px]" />
 
         <Reveal className="overflow-hidden rounded-xl border border-cream/[0.12] bg-surface">
           {stack.map((row, i) => (

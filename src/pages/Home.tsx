@@ -1,7 +1,6 @@
 import Hero from "@/sections/Hero";
 import Services from "@/sections/Services";
 import SelectedWork from "@/sections/SelectedWork";
-import Products from "@/sections/Products";
 import Stack from "@/sections/Stack";
 import About from "@/sections/About";
 import Contact from "@/sections/Contact";
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <Services />
       <SelectedWork />
-      <Products />
       <Stack />
       <About />
       <Contact

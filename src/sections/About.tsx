@@ -17,7 +17,7 @@ export default function About() {
         </div>
         <div>
           <div className="mb-5 font-mono text-[12px] font-medium tracking-[0.05em] text-accent">
-            05 / ABOUT
+            04 / ABOUT
           </div>
           <h2 className="mb-[22px] font-serif text-[32px] font-light leading-[1.2] sm:text-[36px]">
             {about.heading}

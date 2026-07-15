@@ -60,6 +60,19 @@ export default function SelectedWork() {
                 <p className="font-sans text-[15px] leading-[1.6] text-cream/[0.66]">
                   {renderBody(item.body, item.highlight)}
                 </p>
+                {item.serviceBy && (
+                  <div className="mt-4 font-mono text-[12px] font-medium tracking-[0.03em] text-cream/45">
+                    a service by{" "}
+                    <a
+                      href={item.serviceBy.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="text-accent transition-opacity hover:opacity-80"
+                    >
+                      {item.serviceBy.label}
+                    </a>
+                  </div>
+                )}
               </div>
               <div className="flex flex-wrap gap-[7px] md:justify-end">
                 {item.tags.map((tag) => (

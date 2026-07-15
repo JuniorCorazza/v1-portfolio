@@ -25,8 +25,9 @@ export const contact = {
 export const heroTerminal: { command: string; output: string; accent?: boolean }[] = [
   { command: "whoami", output: "junior_corazza" },
   { command: "role --current", output: "full-stack developer · consultant @ Skylet AB", accent: true },
+  { command: "role --side", output: "founder @ Corazza Consulting AB → sidverket.se" },
   { command: "stack --top", output: "TypeScript · React · Next.js · Node · Cloud" },
-  { command: "status", output: "available for new assignments" },
+  { command: "status", output: "open to new engagements" },
 ];
 
 export const stats: { value: string; label: string; accent?: boolean }[] = [
@@ -72,8 +73,20 @@ export const selectedWork: {
   body: string;
   /** Optional substring of `body` rendered brighter for emphasis. */
   highlight?: string;
+  /** Optional "a service by X" footer link, rendered under the body. */
+  serviceBy?: { label: string; href: string };
   tags: string[];
 }[] = [
+  {
+    meta: "FOUNDER · SIDE VENTURE · CORAZZA CONSULTING AB · 2026",
+    title: "Sidverket — websites as a subscription",
+    external: true,
+    href: "https://sidverket.se",
+    body:
+      "A subscription website service for small Swedish businesses — tradespeople like builders, electricians and salons. Each customer gets a fast, professional site tailored to their trade, with their own domain and hosting included. Designed, built and operated solo, on a platform of my own — static builds deployed on Cloudflare, 500+ sites live.",
+    serviceBy: { label: "Corazza Consulting AB", href: "https://corazzaconsulting.com" },
+    tags: ["Python", "SQLite", "Cloudflare", "SSG"],
+  },
   {
     meta: "REITAN CONVENIENCE SWEDEN · 2024–2026",
     title: "Service Platform — integrations & microservices at scale",
@@ -102,75 +115,6 @@ export const selectedWork: {
     href: "https://ecommerce-git-main-junior-corazzas-projects.vercel.app/",
     body: "A storefront entirely customizable from an admin dashboard — create categories and products, edit the dashboard content, and track store analytics in one place.",
     tags: ["TypeScript", "Next.js", "React", "Tailwind"],
-  },
-];
-
-/**
- * 03 / PRODUCTS — not live yet. `href: "#"` is intentional; replace each with a
- * real URL as the product ships (see plan follow-ups).
- */
-export const products: {
-  kicker: string;
-  title: string;
-  body: string;
-  tags: string[];
-  href: string;
-}[] = [
-  {
-    kicker: "SAAS BOILERPLATE",
-    title: "Next.js + Supabase + Stripe starter",
-    body: "A production-ready SaaS foundation: auth, subscription billing, RLS-secured Postgres and team management.",
-    tags: ["Next.js", "Supabase", "Stripe"],
-    href: "#",
-  },
-  {
-    kicker: "API TEMPLATE",
-    title: "FastAPI backend template",
-    body: "A scalable async Python API starter with JWT auth, SQLAlchemy 2.0, a modular repository pattern and Docker.",
-    tags: ["FastAPI", "Python", "Docker"],
-    href: "#",
-  },
-  {
-    kicker: "UI COMPONENTS",
-    title: "Tailwind landing-page kit",
-    body: "Modular, responsive marketing components in React and Tailwind — drop-in blocks with zero UI dependencies.",
-    tags: ["React", "Tailwind"],
-    href: "#",
-  },
-  {
-    kicker: "FIGMA PLUGIN",
-    title: "WCAG contrast checker",
-    body: "A Figma plugin that reads your selection and validates colour contrast against WCAG 2.1 AA/AAA in real time.",
-    tags: ["Figma API", "TypeScript"],
-    href: "#",
-  },
-  {
-    kicker: "EMAIL TEMPLATES",
-    title: "Bulletproof email templates",
-    body: "Responsive, inline-styled HTML newsletters that render pixel-perfect across Outlook, Apple Mail and Gmail.",
-    tags: ["HTML", "Email"],
-    href: "#",
-  },
-  {
-    kicker: "FINANCE MODEL",
-    title: "Cash-flow forecasting model",
-    body: "A 12-month cash-flow forecast for small businesses — automated dashboard, instant runway, no accounting skills needed.",
-    tags: ["Excel", "Sheets"],
-    href: "https://www.etsy.com/se-en/listing/4531742000/automated-cash-flow-forecast-spreadsheet",
-  },
-  {
-    kicker: "PRODUCTIVITY",
-    title: "Freelancer time tracker",
-    body: "Log hours across any shift — even past midnight — and generate invoice-ready summaries automatically.",
-    tags: ["Sheets", "Apps Script"],
-    href: "#",
-  },
-  {
-    kicker: "FINANCE TOOL",
-    title: "Crypto portfolio tracker",
-    body: "A headless Google Sheet that streams live prices from free APIs — private, automated, no data-hungry app.",
-    tags: ["Apps Script", "API"],
-    href: "#",
   },
 ];
 
