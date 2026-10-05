@@ -21,14 +21,13 @@ export default function Hero() {
           <h1 className="font-serif text-[42px] font-light leading-[1.06] tracking-[-0.02em] sm:text-[58px]">
             I build full-stack software{" "}
             <span className="italic text-accent">
-              committed to enhancing human lives.
+              for the people who have to use it.
             </span>
           </h1>
 
           <p className="mt-7 max-w-[520px] font-sans text-[18px] leading-[1.65] text-cream/[0.62]">
-            From data models and cloud infrastructure to the interface people
-            actually touch — I own the whole stack, and integrate quickly into
-            the teams I help.
+            I handle the whole stack, from data models and cloud infrastructure
+            to the front end, and I settle into a new team quickly.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">

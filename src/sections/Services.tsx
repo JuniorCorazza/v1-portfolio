@@ -8,7 +8,7 @@ export default function Services() {
       <div className="mx-auto max-w-content">
         <SectionLabel
           label="01 / SERVICES"
-          subtitle="What I bring into a team as a consultant — hands-on across the full stack."
+          subtitle="What I do when I join a team as a consultant."
           className="mb-11"
         />
 

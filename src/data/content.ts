@@ -11,7 +11,7 @@ export const profile = {
   location: "Stockholm, Sweden",
   coordinates: "Stockholm · 59.33°N",
   branch: "main ✳ full-stack-consultant",
-  availability: "AVAILABLE FOR CONSULTING — 2026",
+  availability: "AVAILABLE FOR CONSULTING · 2026",
 } as const;
 
 export const contact = {
@@ -40,27 +40,27 @@ export const services: { no: string; title: string; body: string; wide?: boolean
   {
     no: "01",
     title: "Full-stack product development",
-    body: "Own software end to end — data model and cloud infrastructure through to the front-end people actually use — in a codebase your team can keep.",
+    body: "I build the whole thing, from data model and cloud infrastructure to the front end, and leave you with a codebase your team can maintain without me.",
   },
   {
     no: "02",
     title: "Integrations & microservices",
-    body: "Design and build the integration solutions and microservices that connect your platform to the partners and services it depends on.",
+    body: "I design and build the integrations and microservices that connect your platform to the partners and services it depends on.",
   },
   {
     no: "03",
     title: "Cloud infrastructure & DevOps",
-    body: "Ship reliably with CI/CD, containers and infrastructure-as-code on Google Cloud — secure, observable, and cost-aware.",
+    body: "I set up CI/CD, containers and infrastructure-as-code on Google Cloud, with attention to security, monitoring and the monthly bill.",
   },
   {
     no: "04",
     title: "Data pipelines & APIs",
-    body: "Handle, process and present data cleanly, and integrate with partners over well-designed RESTful APIs and secure cloud operations.",
+    body: "I build the pipelines that collect, process and present data, and the REST APIs that connect it to partner systems.",
   },
   {
     no: "05",
     title: "Agile delivery & Scrum Master",
-    body: "Set up the code reviews, workflows and rituals that scale a team's output — I've built these from the ground up while scaling an IT department.",
+    body: "I set up the code reviews and workflows a growing team needs. I introduced them at Reitan Convenience while its IT department was growing, and I was Scrum Master at Quandify.",
     wide: true,
   },
 ];
@@ -79,24 +79,24 @@ export const selectedWork: {
 }[] = [
   {
     meta: "FOUNDER · SIDE VENTURE · CORAZZA CONSULTING AB · 2026",
-    title: "Sidverket — websites as a subscription",
+    title: "Sidverket: websites as a subscription",
     external: true,
     href: "https://sidverket.se",
     body:
-      "A subscription website service for small Swedish businesses — tradespeople like builders, electricians and salons. Each customer gets a fast, professional site tailored to their trade, with their own domain and hosting included. Designed, built and operated solo, on a platform of my own — static builds deployed on Cloudflare, 500+ sites live.",
+      "A subscription website service for small Swedish businesses such as builders, electricians and salons. Each customer gets a fast site built for their trade, with their own domain and hosting included. I designed, built and run it alone, on my own platform. The sites are static builds deployed on Cloudflare, and more than 500 are live.",
     serviceBy: { label: "Corazza Consulting AB", href: "https://corazzaconsulting.com" },
     tags: ["Python", "SQLite", "Cloudflare", "SSG"],
   },
   {
     meta: "REITAN CONVENIENCE SWEDEN · 2024–2026",
-    title: "Service Platform — integrations & microservices at scale",
-    body: "Owned integration solutions and microservices on the in-house Service Platform, advised other IT units, and introduced code reviews and structured workflows to scale the department.",
+    title: "Service Platform: integrations & microservices",
+    body: "I built and maintained integrations and microservices on the in-house Service Platform, advised other IT units, and introduced code reviews and structured workflows as the department grew.",
     tags: ["Microservices", "Integrations", "DevOps", "CI/CD"],
   },
   {
     meta: "QUANDIFY AB · 2022–2024",
     title: "Full-stack build & Scrum Master for a data platform",
-    body: "Built the data layer end to end — handling, processing and presenting sensor data — and led UI/UX on the consumer app (live on the App Store & Google Play) that surfaces water usage and leak alerts over partner APIs. Ran cloud infrastructure and served as Scrum Master.",
+    body: "I built the data layer that takes in, processes and presents sensor data, and led UI/UX on the consumer app (live on the App Store & Google Play), which shows water usage and leak alerts. I also ran the cloud infrastructure, handled the partner API integrations and was Scrum Master.",
     highlight: "(live on the App Store & Google Play)",
     tags: ["React", "Node.js", "Cloud", "APIs", "Scrum"],
   },
@@ -105,15 +105,15 @@ export const selectedWork: {
     title: "Cone Storm: Cubic Escape",
     external: true,
     href: "https://luminous-crepe-1e214d.netlify.app/",
-    body: "A browser-based 3D survival game built from scratch with Three.js — dodge an endless onslaught of cones down a shifting neon corridor and chase the high score. Runs entirely client-side, playable in-page.",
+    body: "A 3D survival game for the browser, written from scratch in Three.js. You dodge cones flying down a neon corridor and try to beat your high score. It runs entirely client-side.",
     tags: ["Three.js", "JavaScript", "WebGL"],
   },
   {
     meta: "PERSONAL PROJECT · ONGOING",
-    title: "A fully self-serve e-commerce platform",
+    title: "A self-serve e-commerce platform",
     external: true,
     href: "https://ecommerce-git-main-junior-corazzas-projects.vercel.app/",
-    body: "A storefront entirely customizable from an admin dashboard — create categories and products, edit the dashboard content, and track store analytics in one place.",
+    body: "A storefront you manage from an admin dashboard: create categories and products, edit the content, and check store analytics.",
     tags: ["TypeScript", "Next.js", "React", "Tailwind"],
   },
 ];
@@ -128,10 +128,10 @@ export const stack: { label: string; items: string }[] = [
 ];
 
 export const about = {
-  heading: "Full-stack, end to end — and genuinely built for the people who use it.",
+  heading: "Full-stack developer, former electrician.",
   paragraphs: [
-    "I'm a full-stack developer based in Stockholm, now working independently as a consultant through Skylet. I own software across the whole stack — data models, cloud infrastructure, APIs and the interfaces people actually touch — and I integrate quickly into whatever team I'm helping.",
-    "I came to engineering deliberately — from work as an electrician and a retail manager into a Computer Science degree and a career in code. That path is why I care as much about the people and process around software as the software itself.",
+    "I'm a full-stack developer in Stockholm, now working as a consultant through Skylet. I work across the whole stack: data models, cloud infrastructure, APIs and front ends. I'm used to being the new person on a team, and I get up to speed quickly.",
+    "I got here the long way round. I managed a department at H&M, then worked as an electrician, and did my Computer Science degree alongside the electrician job. That's why I care about the people and the process around software as much as the code.",
   ],
 } as const;
 
@@ -149,49 +149,49 @@ export const timeline: {
   {
     hash: "9f3ac21",
     ref: "HEAD → main, current",
-    date: "May 2026 — Present · Stockholm",
+    date: "May 2026 – Present · Stockholm",
     title: "Skylet AB — Full-stack Developer",
     titleNote: "(Consultant)",
-    body: "Delivering tailored full-stack solutions for diverse clients — bridging complex business requirements and technical implementation, and embedding into client teams across both front-end and robust back-end systems.",
+    body: "Full-stack consulting. I join client teams, turn business requirements into working software, and work on both front end and back end.",
     head: true,
   },
   {
     hash: "6b1e4d0",
-    date: "Aug 2024 — May 2026 · Stockholm",
+    date: "Aug 2024 – May 2026 · Stockholm",
     title: "Reitan Convenience Sweden — Full-stack Developer, DevOps",
-    body: "On the DevOps team, developed and maintained proprietary systems with a focus on the Service Platform — designing and implementing integration solutions and microservices, guiding other IT units and business functions, and establishing new team protocols (code reviews, structured workflows) to scale the IT department.",
+    body: "I was on the DevOps team, developing and maintaining in-house systems, mainly the Service Platform. I designed and built integrations and microservices, advised other IT units and business functions, and introduced code reviews and structured workflows as the IT department grew.",
   },
   {
     hash: "3c9f7a2",
-    date: "Mar 2022 — Aug 2024 · Stockholm",
+    date: "Mar 2022 – Aug 2024 · Stockholm",
     title: "Quandify AB — Full-stack Developer & Scrum Master",
-    body: "Handled, relayed, processed and presented data across the system; led front-end UI/UX and explored new technologies; managed cloud infrastructure and partner API integrations for secure, efficient operations; and served as Scrum Master, running the agile process for the team.",
+    body: "I worked on the data flow through the whole system, from sensor readings to what the user sees, and led front-end UI/UX. I also managed the cloud infrastructure and partner API integrations, and ran the team's agile process as Scrum Master.",
   },
   {
     hash: "1a0d5e8",
     ref: "tag: v1.0-graduated",
-    date: "Aug 2019 — Jun 2022 · Örebro",
+    date: "Aug 2019 – Jun 2022 · Örebro",
     title: "Örebro Universitet — B.Sc Computer Science",
-    body: "Completed a Bachelor of Science in Computer Science — the deliberate pivot into software, studied alongside working as a qualified electrician.",
+    body: "Bachelor of Science in Computer Science. I studied while working as an electrician, with the plan of moving into software.",
   },
   {
     hash: "84c2b19",
-    date: "Aug 2018 — Mar 2022 · Stockholm",
+    date: "Aug 2018 – Mar 2022 · Stockholm",
     title: "Temael i Tumba AB — Electrician",
-    body: "Practised as a qualified electrician on complex tenant adaptations and installations — high technical precision, real-world systems, and building regulations.",
+    body: "Worked as a qualified electrician on tenant adaptations and installations. The work had to be precise and had to meet building regulations.",
     muted: true,
   },
   {
     hash: "0e5f3c4",
     ref: "root",
-    date: "Feb 2017 — Jul 2018 · Stockholm",
+    date: "Feb 2017 – Jul 2018 · Stockholm",
     title: "Hennes & Mauritz — Department Manager",
-    body: "Personnel planning, scheduling and organising a department to maximise sales and profitability — plus recruitment and training. Where I learned to lead people.",
+    body: "Staffing, scheduling and running a department to hit sales and profit targets, plus recruitment and training. This is where I learned to lead people.",
     muted: true,
   },
 ];
 
-export const languages = ["Swedish — mother tongue", "English — fluent", "German — basics"];
+export const languages = ["Swedish (native)", "English (fluent)", "German (basics)"];
 
 export const outsideTheTerminal =
-  "Golf · gaming · and a lasting soft spot for\nThe Legend of Zelda: Ocarina of Time.";
+  "Golf, gaming, and a soft spot for\nThe Legend of Zelda: Ocarina of Time.";

@@ -16,7 +16,7 @@ export default function Home() {
       <Contact
         line1="Let's build something"
         line2="worth keeping."
-        blurb="Tell me what you're working on — I reply to every message within a day."
+        blurb="Tell me what you're working on. I reply to every message within a day."
       />
     </>
   );
