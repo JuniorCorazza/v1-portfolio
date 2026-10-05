@@ -3,8 +3,8 @@
 Personal portfolio for Junior Corazza — a dark, terminal-themed single-page app
 with two views: a **Home** page and a git-log-style **Experience** page.
 
-Built with Vite, React, TypeScript and Tailwind CSS. Deployed to AWS S3 +
-CloudFront.
+Built with Vite, React, TypeScript and Tailwind CSS. Deployed to Cloudflare
+Pages.
 
 ## Development
 
@@ -48,14 +48,18 @@ buttons, links, terminal `$` prompts and status dots — updates at once:
 ## Routing
 
 Uses `HashRouter` (`/#/`, `/#/experience`) so deep links and refreshes work on
-static S3/CloudFront hosting without a server-side SPA fallback.
+any static hosting without a server-side SPA fallback. (Cloudflare Pages also
+serves `index.html` for unknown paths, so a future move to `BrowserRouter` is
+possible.)
 
 ## Deploy
 
 Pushes to `main` deploy automatically via GitHub Actions
-([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) using AWS OIDC
-— no static credentials. To deploy manually with local AWS credentials:
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) to the
+Cloudflare Pages project `juniorcorazza` (repo secret `CLOUDFLARE_API_TOKEN`,
+repo variable `CLOUDFLARE_ACCOUNT_ID`). To deploy manually with local
+wrangler auth:
 
 ```bash
-yarn deploy     # build + s3 sync + CloudFront invalidation
+yarn deploy     # build + wrangler pages deploy
 ```
